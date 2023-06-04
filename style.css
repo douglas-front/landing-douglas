@@ -1,0 +1,1674 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+.loading{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.loading > h1{
+    text-transform: uppercase;
+    position: relative;
+}
+.loading > h1::after{
+    content: '...';
+    font-size: 1px;
+    animation: h1An .9s ease-in-out infinite;
+}
+@keyframes h1An {
+    0%{
+        font-size: 1px;
+    }
+    100%{
+        font-size: 30px;
+    }
+}
+.loading.loading-off{
+    display: none;
+}
+.header{
+    display: none;
+}
+.header.element-on{
+    display: flex;
+}
+header{
+    width: 100%;
+    display: flex;
+}
+header> nav > div > h1{
+    text-transform: uppercase;
+}
+header > nav{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    background-color: #fff;
+    z-index: 100;
+}
+header > nav > ul{
+    display: flex;
+    list-style: none;
+}
+header > nav > ul > li{
+    margin: 20px;
+}
+header > nav > ul > li > a{
+    text-decoration: none;
+    font-size: 20px;
+    color: #000;
+    position: relative;
+}
+header > nav > ul > li > a::before{
+    content: '';
+    height: 3px;
+    width: 0%;
+    background-color: red;
+    position: absolute;
+    bottom: 0;
+    transition: all .3s;
+}
+header > nav > ul > li > a:hover::before{
+    content: '';
+    width: 100%;
+}
+header > nav >:nth-child(3) button{
+    padding: 10px 30px;
+    border: 1px solid #ff0000;
+    background: transparent;
+    cursor: pointer;
+    border-radius: 3px;
+    font-size: 15px;
+    position: relative;
+    transition: all .2s;
+}
+header > nav >:nth-child(3) button::before{
+    content: '';
+    position: absolute;
+    background-color: rgb(255, 0, 0);
+    width: 10%;
+    left: 0;
+    top: 0;
+    height: 100%;
+    transition: all .3s ;
+    z-index: -1;
+    opacity: 0;
+}
+header > nav >:nth-child(3) button:hover{
+    color: #fff;
+    letter-spacing: 2px;
+}
+header > nav >:nth-child(3) button:hover::before{
+    left: 0;
+    opacity: 1;
+    height: 100%;
+    width: 100%;
+}
+/* mobile */
+.mobile{
+    display: none;
+}
+header > .mobile > li{
+    margin: 20px;
+}
+header > .mobile > li > a{
+    text-decoration: none;
+    font-size: 25px;
+    font-weight: lighter;
+    color: #000;
+    position: relative;
+}
+header > .mobile > li > a::before{
+    content: '';
+    height: 3px;
+    width: 0%;
+    background-color: red;
+    position: absolute;
+    bottom: 0;
+    transition: all .3s;
+}
+header > .mobile > li > a:hover::before{
+    content: '';
+    width: 100%;
+}
+#btn-mobile{
+    display: none;
+}
+#btn-mobile > span{
+    height: 5px;
+    width: 32px;
+    background-color: #000;
+    margin-top: 4px;
+    border-radius: 3px;
+    transition: all .2s;
+}
+#btn-mobile > .ln1.mobile-on{
+    transform: translateY(150%) rotate(45deg);
+}
+#btn-mobile > .ln2.mobile-on{
+    transform: translateY(-200%) rotate(-45deg);
+
+}
+#btn-mobile > span.mobile-on ~ .off{
+    opacity: 0;
+}
+.mobile > :last-child > button{
+    padding: 10px 20px;
+    border: 1px solid #ff0000;
+    background: transparent;
+    cursor: pointer;
+    border-radius: 3px;
+    font-size: 15px;
+    position: relative;
+    transition: all .2s;
+}
+.mobile > :last-child > button:hover{
+    color: #fff;
+}
+.mobile > :last-child > button::before{
+content: '';
+position: absolute;
+background-color: rgb(255, 0, 0);
+width: 10%;
+left: 0;
+top: 0;
+height: 100%;
+transition: all .3s ;
+z-index: -1;
+opacity: 0;
+}
+.mobile > :last-child > button:hover::before{
+    left: 0;
+    opacity: 1;
+    height: 100%;
+    width: 100%;
+}
+
+/* -------section-------- */
+.main{
+    display: none;
+}
+.main.element-on{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+}
+.section-apresentation{
+    width: 50%;
+    display: flex;
+    /* position: relative; */
+}
+.inline{
+    width: 100%;
+  
+}
+.inline > h1{
+    font-size: 50px;
+    position: relative;
+    margin-left: 15%;
+    margin-top: 20%;
+}
+.inline > h1 > span{
+    font-size: 20px;
+    font-weight: lighter;
+    border: 1px solid #ff0000;
+    margin-left: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    color: #000;
+    position: absolute;
+    top: 8%;
+}
+.inline >:nth-child(2){
+    word-wrap: break-word;
+    width: 380px;
+    margin-top: 5%;
+    margin-left: 15%;
+    font-weight: lighter;
+}
+.btns-section{
+    margin-top: 5%;
+    margin-left: 15%;
+}
+.btns-section > :first-child > :first-child{
+    background-color: #ff0000;
+    padding: 15px 30px;
+    border: 1px solid #ff0000;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 15px;
+    position: relative;
+    transition: all .2s;
+    color: #fff;
+}
+.btns-section > :first-child > :first-child:hover{
+    background-color: #910000;
+    border: 1px solid #910000;
+    letter-spacing: 2px;
+}
+.btns-section > :nth-child(2) > :first-child{
+    background: transparent;
+    border: none;
+    font-size: 17px;
+    margin-left: 5%;
+    cursor: pointer;
+    transition: all .3s;
+    padding: 10px;
+}
+.btns-section > :nth-child(3){
+    cursor: pointer;
+}
+.div-clients{
+    margin-top: 5%;
+    margin-left: 15%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+#btn-up{
+    display: none;
+}
+#btn-down{
+    display: none;
+}
+.div-clients > :first-child{
+    font-size: 30px;
+    position: relative;
+    height: 50px;
+}
+.div-clients > :first-child::before{
+    content: 'projetos com clientes reais';
+    position: absolute;
+    font-size: 15px;
+    bottom: 0px;
+}
+.div-clients > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 81%;
+}
+.div-clients > div > :first-child{
+    font-size: 30px;
+    position: relative;
+    height: 90px;
+    width: 90px;
+}
+.div-clients > div > :first-child::before{
+    content: 'projetos ao todo (github e clientes)';
+    position: absolute;
+    font-size: 15px;
+    bottom: 0px;
+}
+.div-clients > div > :nth-child(2){
+    position: relative;
+    height: 50px;
+    width: 200px;
+}
+.div-clients > div > :nth-child(2)::before{
+    content: 'douglasjknw007@gmail.com';
+    position: absolute;
+    font-size: 15px;
+    bottom: 0px;
+}
+.section-wallpaper{
+    float: right;
+    width: 50%;
+    background: url("oskar-yildiz-cOkpTiJMGzA-unsplash.jpg") no-repeat center/cover;
+    display: flex;
+    justify-content: center;
+    color: #fff;
+    position: relative;
+}
+.section-wallpaper > :first-child{
+    font-weight: lighter;
+    margin-top: 20%;
+    text-transform: uppercase;
+}
+.section-wallpaper > div{
+    position: absolute;
+    bottom: 50px;
+    display: inline-flex;
+    align-items: center;
+    gap: 20px;
+    height: 70px;
+    width: 280px;
+}
+.section-wallpaper > div > button{
+    padding: 10px 20px;
+    border-radius: 40px;
+    border: none;
+    cursor: pointer;
+    transition: all .3s;
+}
+.section-wallpaper > div > button:hover{
+    background-color: #000;
+    color: #fff;
+    transform: scale(1.1);
+}
+@media screen and (min-width: 200px) and (max-width: 1115px) {
+    .main.element-on{
+        z-index: -1;
+        height: 100vh;
+        display: block;
+    }
+    header{
+        position: relative;
+    }
+    .mobile.mobile-on{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        animation: ap 1s ease-in-out;
+        background-color: #ffffffc9;
+        position: fixed;
+        z-index: 1;
+        top: 0%;
+    }
+    @keyframes ap {
+        0%{
+            width: 50%;
+        }
+        100%{
+            width: 100%;
+        }
+    }
+    #btn-mobile{
+        display: block;
+        border: none;
+        padding: 12px;
+        display: flex;
+        flex-direction: column;
+        background-color: transparent;
+        cursor: pointer;
+    }
+    header > nav > :nth-child(2){
+        display: none;
+    }
+    header > nav >:nth-child(3) button{
+        display: none;
+    }
+    .section-apresentation{
+        width: 100%;
+    }
+    .section-wallpaper{
+       width: 100%;
+    }
+}
+@media screen and (min-width: 200px) and (max-width: 320px){
+    .section-apresentation{
+        height: 450px;
+    }
+    .inline > h1{
+        font-size: 31px;
+        margin-top: 33%;
+        margin-left: 0%;
+    }
+    .inline > h1 > span{
+        font-size: 13px;
+        font-weight: lighter;
+        border: 1px solid #ff0000;
+        padding: 5px 2px;
+        border-radius: 5px;
+        color: #000;
+        position: absolute;
+        top: 5%;
+    }
+    .inline >:nth-child(2){
+        word-wrap: break-word;
+        width: 250px;
+        margin-top: 5%;
+        margin-left: 5%;
+        font-weight: lighter;
+        font-size: 20px;
+    }
+    .btns-section{
+        margin-top: 10%;
+        margin-left: 5%;
+    }
+    .div-clients{
+       margin-top: 10%;
+       margin-left: 0%;
+        width: 100%;
+        background-color: #ff0000;
+        padding: 5%;
+        color: #fff;
+        border-radius: 20px 20px 0 0;
+        position: relative;
+    }
+    .div-clients.div-clients-active{
+        position: absolute;
+        top: 0;
+        z-index: 200;
+        animation: clients-on 1s alternate;
+        height: 100%;
+    }
+    @keyframes clients-on {
+        0%{
+            height: 0;
+        }
+        100%{
+            height: 1;
+        }
+    }
+    .div-clients > #btn-up{
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 10px 15px;
+        border-radius: 50%;
+        border: none;
+        background-color: #000;
+        color: #fff;
+    }
+    #btn-down.down-btn-on{
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 10px 15px;
+        border-radius: 50%;
+        border: none;
+        background-color: #000;
+        color: #fff;
+    }
+    .div-clients.div-clients-active  > :first-child{
+        margin-top: 20%;
+    }
+    .div-clients > :first-child::before{
+        font-size: 18px;
+        
+
+    }
+    .div-clients > div {
+        display: none;
+      
+    }
+    .div-clients.div-clients-active > div{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        justify-content: baseline;
+        align-items: baseline;
+        gap: 30px;
+    }
+    .div-clients.div-clients-active > div > :first-child{
+        font-size: 30px;
+        position: relative;
+        height: 50px; 
+        width: 100%;
+    }
+
+    .section-wallpaper{
+        height: 380px;
+        background-size: 200%;
+        margin-top: 5%;
+     }
+     .section-wallpaper > :first-child{
+        font-size: 17px;
+        margin-top: 10%;
+    }
+    .section-wallpaper > div{
+        bottom: 20px;
+        justify-content: center;
+        gap: 10px;
+        width: 100%;
+    }
+}
+@media screen and (min-width: 321px) and (max-width: 370px){
+    .section-apresentation{
+        height: 510px;
+    }
+    .inline > h1{
+        font-size: 35px;
+        margin-top: 33%;
+        margin-left: 5%;
+    }
+    .inline > h1 > span{
+        font-size: 17px;
+        font-weight: lighter;
+        border: 1px solid #ff0000;
+        padding: 5px 2px;
+        border-radius: 5px;
+        color: #000;
+        position: absolute;
+        top: 5%;
+    }
+    .inline >:nth-child(2){
+        word-wrap: break-word;
+        width: 90%;
+        margin-top: 5%;
+        margin-left: 5%;
+        font-weight: lighter;
+        font-size: 20px;
+    }
+    .btns-section{
+        margin-top: 10%;
+        margin-left: 5%;
+    }
+    .div-clients{
+       margin-top: 10%;
+       margin-left: 0%;
+        width: 100%;
+        background-color: #ff0000;
+        padding: 5%;
+        color: #fff;
+        border-radius: 20px 20px 0 0;
+        position: relative;
+    }
+    .div-clients.div-clients-active{
+        position: absolute;
+        top: 0;
+        z-index: 200;
+        animation: clients-on 1s alternate;
+        height: 100%;
+    }
+    @keyframes clients-on {
+        0%{
+            height: 0;
+        }
+        100%{
+            height: 1;
+        }
+    }
+    .div-clients > #btn-up{
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 10px 15px;
+        border-radius: 50%;
+        border: none;
+        background-color: #000;
+        color: #fff;
+    }
+    #btn-down.down-btn-on{
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 10px 15px;
+        border-radius: 50%;
+        border: none;
+        background-color: #000;
+        color: #fff;
+    }
+    .div-clients.div-clients-active  > :first-child{
+        margin-top: 20%;
+    }
+    .div-clients > :first-child::before{
+        font-size: 18px;
+        
+
+    }
+    .div-clients > div {
+        display: none;
+      
+    }
+    .div-clients.div-clients-active > div{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        justify-content: baseline;
+        align-items: baseline;
+        gap: 30px;
+    }
+    .div-clients.div-clients-active > div > :first-child{
+        font-size: 30px;
+        position: relative;
+        height: 50px; 
+        width: 100%;
+    }
+
+    .section-wallpaper{
+        height: 390px;
+        background-size: 115%;
+        margin-top: 5%;
+     }
+     .section-wallpaper > :first-child{
+        font-size: 17px;
+        margin-top: 10%;
+    }
+    .section-wallpaper > div{
+        bottom: 20px;
+        justify-content: center;
+        gap: 10px;
+        width: 100%;
+    }
+}
+@media screen and (min-width: 371px) and (max-width: 440px){
+    .section-apresentation{
+        height: 540px;
+    }
+    .inline > h1{
+        font-size: 37px;
+        margin-top: 33%;
+        margin-left: 5%;
+    }
+    .inline > h1 > span{
+        font-size: 15px;
+        font-weight: lighter;
+        border: 1px solid #ff0000;
+        padding: 5px 2px;
+        border-radius: 5px;
+        color: #000;
+        position: absolute;
+        top: 10%;
+    }
+    .inline >:nth-child(2){
+        word-wrap: break-word;
+        width: 90%;
+        margin-top: 5%;
+        margin-left: 5%;
+        font-weight: lighter;
+        font-size: 20px;
+    }
+    .btns-section{
+        margin-top: 10%;
+        margin-left: 5%;
+        width: 100%;
+    }
+    .div-clients{
+       margin-top: 10%;
+       margin-left: 0%;
+        width: 100%;
+        background-color: #ff0000;
+        padding: 5%;
+        color: #fff;
+        border-radius: 20px 20px 0 0;
+        position: relative;
+    }
+    .div-clients.div-clients-active{
+        position: absolute;
+        top: 0;
+        z-index: 200;
+        animation: clients-on 1s alternate;
+        height: 100%;
+    }
+    @keyframes clients-on {
+        0%{
+            height: 0;
+        }
+        100%{
+            height: 1;
+        }
+    }
+    .div-clients > #btn-up{
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 10px 15px;
+        border-radius: 50%;
+        border: none;
+        background-color: #000;
+        color: #fff;
+    }
+    #btn-down.down-btn-on{
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 10px 15px;
+        border-radius: 50%;
+        border: none;
+        background-color: #000;
+        color: #fff;
+    }
+    .div-clients.div-clients-active  > :first-child{
+        margin-top: 20%;
+    }
+    .div-clients > :first-child::before{
+        font-size: 18px;
+        
+
+    }
+    .div-clients > div {
+        display: none;
+      
+    }
+    .div-clients.div-clients-active > div{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        justify-content: baseline;
+        align-items: baseline;
+        gap: 30px;
+    }
+    .div-clients.div-clients-active > div > :first-child{
+        font-size: 30px;
+        position: relative;
+        height: 50px; 
+        width: 100%;
+    }
+
+    .section-wallpaper{
+        height: 400px;
+        background-size: 115%;
+        margin-top: 1%;
+     }
+     .section-wallpaper > :first-child{
+        font-size: 20px;
+        margin-top: 10%;
+    }
+    .section-wallpaper > div{
+        bottom: 20px;
+        justify-content: center;
+        gap: 10px;
+        width: 100%;
+    }
+}
+@media screen and (min-width: 441px) and (max-width: 500px){
+    .section-apresentation{
+        height: 580px;
+    }
+    .inline > h1{
+        font-size: 40px;
+        margin-top: 33%;
+        margin-left: 5%;
+    }
+    .inline > h1 > span{
+        font-size: 20px;
+        font-weight: lighter;
+        border: 1px solid #ff0000;
+        padding: 5px 2px;
+        border-radius: 5px;
+        color: #000;
+        position: absolute;
+        top: 10%;
+    }
+    .inline >:nth-child(2){
+        word-wrap: break-word;
+        width: 90%;
+        margin-top: 5%;
+        margin-left: 5%;
+        font-weight: lighter;
+        font-size: 23px;
+    }
+    .btns-section{
+        margin-top: 10%;
+        margin-left: 5%;
+        width: 100%;
+    }
+    .div-clients{
+       margin-top: 10%;
+       margin-left: 0%;
+        width: 100%;
+        background-color: #ff0000;
+        padding: 5%;
+        color: #fff;
+        border-radius: 20px 20px 0 0;
+        position: relative;
+    }
+    .div-clients.div-clients-active{
+        position: absolute;
+        top: 0;
+        z-index: 200;
+        animation: clients-on 1s alternate;
+        height: 100%;
+    }
+    @keyframes clients-on {
+        0%{
+            height: 0;
+        }
+        100%{
+            height: 1;
+        }
+    }
+    .div-clients > #btn-up{
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 10px 15px;
+        border-radius: 50%;
+        border: none;
+        background-color: #000;
+        color: #fff;
+    }
+    #btn-down.down-btn-on{
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 10px 15px;
+        border-radius: 50%;
+        border: none;
+        background-color: #000;
+        color: #fff;
+    }
+    .div-clients.div-clients-active  > :first-child{
+        margin-top: 20%;
+    }
+    .div-clients > :first-child::before{
+        font-size: 18px;
+        
+
+    }
+    .div-clients > div {
+        display: none;
+      
+    }
+    .div-clients.div-clients-active > div{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        justify-content: baseline;
+        align-items: baseline;
+        gap: 30px;
+    }
+    .div-clients.div-clients-active > div > :first-child{
+        font-size: 30px;
+        position: relative;
+        height: 50px; 
+        width: 100%;
+    }
+
+    .section-wallpaper{
+        height: 400px;
+        background-size: 115%;
+        margin-top: 1%;
+     }
+     .section-wallpaper > :first-child{
+        font-size: 25px;
+        margin-top: 10%;
+    }
+    .section-wallpaper > div{
+        bottom: 20px;
+        justify-content: center;
+        gap: 10px;
+        width: 100%;
+    }
+}
+@media screen and (min-width: 501px) and (max-width: 564px){
+    .section-apresentation{
+        height: 630px;
+    }
+    .inline > h1{
+        font-size: 45px;
+        margin-top: 28%;
+        margin-left: 5%;
+    }
+    .inline > h1 > span{
+        font-size: 25px;
+        font-weight: lighter;
+        border: 1px solid #ff0000;
+        padding: 5px 2px;
+        border-radius: 5px;
+        color: #000;
+        position: absolute;
+        top: 10%;
+    }
+    .inline >:nth-child(2){
+        word-wrap: break-word;
+        width: 90%;
+        margin-top: 5%;
+        margin-left: 5%;
+        font-weight: lighter;
+        font-size: 23px;
+    }
+    .btns-section{
+        margin-top: 10%;
+        margin-left: 5%;
+        width: 100%;
+    }
+    .btns-section > :first-child{
+        background-color: #ff0000;
+        padding: 20px 40px;
+        border: 1px solid #ff0000;
+        border-radius: 3px;
+        cursor: pointer;
+        font-size: 17px;
+        position: relative;
+        transition: all .2s;
+        color: #fff;
+    }
+    .div-clients{
+       margin-top: 10%;
+       margin-left: 0%;
+        width: 100%;
+        background-color: #ff0000;
+        padding: 5%;
+        color: #fff;
+        border-radius: 20px 20px 0 0;
+        position: relative;
+    }
+    .div-clients.div-clients-active{
+        position: absolute;
+        top: 0;
+        z-index: 200;
+        animation: clients-on 1s alternate;
+        height: 100%;
+    }
+    @keyframes clients-on {
+        0%{
+            height: 0;
+        }
+        100%{
+            height: 1;
+        }
+    }
+    .div-clients > #btn-up{
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 10px 15px;
+        border-radius: 50%;
+        border: none;
+        background-color: #000;
+        color: #fff;
+    }
+    #btn-down.down-btn-on{
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 10px 15px;
+        border-radius: 50%;
+        border: none;
+        background-color: #000;
+        color: #fff;
+    }
+    .div-clients.div-clients-active  > :first-child{
+        margin-top: 20%;
+    }
+    .div-clients > :first-child::before{
+        font-size: 18px;
+        
+
+    }
+    .div-clients > div {
+        display: none;
+      
+    }
+    .div-clients.div-clients-active > div{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        justify-content: baseline;
+        align-items: baseline;
+        gap: 30px;
+    }
+    .div-clients.div-clients-active > div > :first-child{
+        font-size: 30px;
+        position: relative;
+        height: 50px; 
+        width: 100%;
+    }
+
+    .section-wallpaper{
+        height: 450px;
+        background-size: 115%;
+        margin-top: 1%;
+     }
+     .section-wallpaper > :first-child{
+        font-size: 25px;
+        margin-top: 10%;
+    }
+    .section-wallpaper > div{
+        bottom: 20px;
+        justify-content: center;
+        gap: 10px;
+        width: 100%;
+    }
+}
+@media screen and (min-width: 565px) and (max-width: 602px){
+    .section-apresentation{
+        height: 670px;
+    }
+    .inline > h1{
+        font-size: 50px;
+        margin-top: 28%;
+        margin-left: 5%;
+    }
+    .inline > h1 > span{
+        font-size: 25px;
+        font-weight: lighter;
+        border: 1px solid #ff0000;
+        padding: 5px 2px;
+        border-radius: 5px;
+        color: #000;
+        position: absolute;
+        top: 10%;
+    }
+    .inline >:nth-child(2){
+        word-wrap: break-word;
+        width: 90%;
+        margin-top: 5%;
+        margin-left: 5%;
+        font-weight: lighter;
+        font-size: 23px;
+    }
+    .btns-section{
+        margin-top: 10%;
+        margin-left: 5%;
+        width: 100%;
+    }
+    .btns-section > :first-child{
+        background-color: #ff0000;
+        padding: 20px 40px;
+        border: 1px solid #ff0000;
+        border-radius: 3px;
+        cursor: pointer;
+        font-size: 18px;
+        position: relative;
+        transition: all .2s;
+        color: #fff;
+    }
+    .div-clients{
+       margin-top: 10%;
+       margin-left: 0%;
+        width: 100%;
+        background-color: #ff0000;
+        padding: 5%;
+        color: #fff;
+        border-radius: 20px 20px 0 0;
+        position: relative;
+    }
+    .div-clients.div-clients-active{
+        position: absolute;
+        top: 0;
+        z-index: 200;
+        animation: clients-on 1s alternate;
+        height: 100%;
+    }
+    @keyframes clients-on {
+        0%{
+            height: 0;
+        }
+        100%{
+            height: 1;
+        }
+    }
+    .div-clients > #btn-up{
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 10px 15px;
+        border-radius: 50%;
+        border: none;
+        background-color: #000;
+        color: #fff;
+    }
+    #btn-down.down-btn-on{
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 10px 15px;
+        border-radius: 50%;
+        border: none;
+        background-color: #000;
+        color: #fff;
+    }
+    .div-clients.div-clients-active  > :first-child{
+        margin-top: 20%;
+    }
+    .div-clients > :first-child::before{
+        font-size: 18px;
+        
+
+    }
+    .div-clients > div {
+        display: none;
+      
+    }
+    .div-clients.div-clients-active > div{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        justify-content: baseline;
+        align-items: baseline;
+        gap: 30px;
+    }
+    .div-clients.div-clients-active > div > :first-child{
+        font-size: 30px;
+        position: relative;
+        height: 50px; 
+        width: 100%;
+    }
+
+    .section-wallpaper{
+        height: 450px;
+        background-size: 101%;
+        margin-top: 1%;
+     }
+     .section-wallpaper > :first-child{
+        font-size: 25px;
+        margin-top: 10%;
+    }
+    .section-wallpaper > div{
+        bottom: 20px;
+        justify-content: center;
+        gap: 10px;
+        width: 100%;
+    }
+}
+@media screen and (min-width: 603px) and (max-width: 702px){
+    .section-apresentation{
+        height: 720px;
+    }
+    .inline > h1{
+        font-size: 55px;
+        margin-top: 24%;
+        margin-left: 5%;
+    }
+    .inline > h1 > span{
+        font-size: 25px;
+        font-weight: lighter;
+        border: 1px solid #ff0000;
+        padding: 5px 2px;
+        border-radius: 5px;
+        color: #000;
+        position: absolute;
+        top: 10%;
+    }
+    .inline >:nth-child(2){
+        word-wrap: break-word;
+        width: 90%;
+        margin-top: 5%;
+        margin-left: 5%;
+        font-weight: lighter;
+        font-size: 25px;
+    }
+    .btns-section{
+        margin-top: 10%;
+        margin-left: 5%;
+        width: 100%;
+    }
+    .btns-section > :first-child{
+        background-color: #ff0000;
+        padding: 20px 40px;
+        border: 1px solid #ff0000;
+        border-radius: 3px;
+        cursor: pointer;
+        font-size: 18px;
+        position: relative;
+        transition: all .2s;
+        color: #fff;
+    }
+    .div-clients{
+       margin-top: 10%;
+       margin-left: 0%;
+        width: 100%;
+        background-color: #ff0000;
+        padding: 5%;
+        color: #fff;
+        border-radius: 20px 20px 0 0;
+        position: relative;
+    }
+    .div-clients.div-clients-active{
+        position: absolute;
+        top: 0;
+        z-index: 200;
+        animation: clients-on 1s alternate;
+        height: 100%;
+    }
+    @keyframes clients-on {
+        0%{
+            height: 0;
+        }
+        100%{
+            height: 1;
+        }
+    }
+    .div-clients > #btn-up{
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 20px 25px;
+        border-radius: 50%;
+        border: none;
+        background-color: #000;
+        color: #fff;
+    }
+    #btn-down.down-btn-on{
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 20px 25px;
+        border-radius: 50%;
+        border: none;
+        background-color: #000;
+        color: #fff;
+    }
+    .div-clients.div-clients-active  > :first-child{
+        margin-top: 20%;
+        font-size: 50px;
+        height: 90px;
+    }
+    .div-clients.div-clients-active  > :first-child::before{
+        font-size: 28px;    
+    }
+    .div-clients > div {
+        display: none;
+      
+    }
+    .div-clients.div-clients-active > div{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        justify-content: baseline;
+        align-items: baseline;
+        gap: 30px;
+    }
+    .div-clients.div-clients-active > div > :first-child{
+        font-size: 50px;
+        position: relative;
+        height: 90px; 
+        width: 100%;
+    }
+    .div-clients.div-clients-active > div > :first-child::before{
+        font-size: 28px;
+    }
+    .div-clients.div-clients-active > div > :last-child{
+        font-size: 40px;
+        height: 80px;
+        width: 100%;
+    }
+    .div-clients.div-clients-active > div > :last-child::before{
+        font-size: 28px;
+    }
+
+    .section-wallpaper{
+        height: 450px;
+        background-size: 101%;
+        margin-top: 1%;
+     }
+     .section-wallpaper > :first-child{
+        font-size: 25px;
+        margin-top: 10%;
+    }
+    .section-wallpaper > div{
+        bottom: 20px;
+        justify-content: center;
+        gap: 10px;
+        width: 100%;
+    }
+}
+@media screen and (min-width: 703px) and (max-width: 805px){
+    .section-apresentation{
+        height: 785px;
+    }
+    .inline > h1{
+        font-size: 65px;
+        margin-top: 20%;
+        margin-left: 5%;
+    }
+    .inline > h1 > span{
+        font-size: 25px;
+        font-weight: lighter;
+        border: 1px solid #ff0000;
+        padding: 5px 2px;
+        border-radius: 5px;
+        color: #000;
+        position: absolute;
+        top: 10%;
+    }
+    .inline >:nth-child(2){
+        word-wrap: break-word;
+        width: 90%;
+        margin-top: 5%;
+        margin-left: 5%;
+        font-weight: lighter;
+        font-size: 28px;
+    }
+    .btns-section{
+        margin-top: 10%;
+        margin-left: 5%;
+        width: 100%;
+    }
+    .btns-section > :first-child{
+        background-color: #ff0000;
+        padding: 20px 40px;
+        border: 1px solid #ff0000;
+        border-radius: 3px;
+        cursor: pointer;
+        font-size: 18px;
+        position: relative;
+        transition: all .2s;
+        color: #fff;
+    }
+    .div-clients{
+       margin-top: 10%;
+       margin-left: 0%;
+        width: 100%;
+        background-color: #ff0000;
+        padding: 5%;
+        color: #fff;
+        border-radius: 20px 20px 0 0;
+        position: relative;
+    }
+    .div-clients.div-clients-active{
+        position: absolute;
+        top: 0;
+        z-index: 200;
+        animation: clients-on 1s alternate;
+        height: 100%;
+    }
+    @keyframes clients-on {
+        0%{
+            height: 0;
+        }
+        100%{
+            height: 1;
+        }
+    }
+    .div-clients > #btn-up{
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 20px 25px;
+        border-radius: 50%;
+        border: none;
+        background-color: #000;
+        color: #fff;
+    }
+    #btn-down.down-btn-on{
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 20px 25px;
+        border-radius: 50%;
+        border: none;
+        background-color: #000;
+        color: #fff;
+    }
+    .div-clients.div-clients-active  > :first-child{
+        margin-top: 20%;
+        font-size: 50px;
+        height: 90px;
+    }
+    .div-clients.div-clients-active  > :first-child::before{
+        font-size: 28px;    
+    }
+    .div-clients > div {
+        display: none;
+      
+    }
+    .div-clients.div-clients-active > div{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        justify-content: baseline;
+        align-items: baseline;
+        gap: 30px;
+    }
+    .div-clients.div-clients-active > div > :first-child{
+        font-size: 50px;
+        position: relative;
+        height: 90px; 
+        width: 100%;
+    }
+    .div-clients.div-clients-active > div > :first-child::before{
+        font-size: 28px;
+    }
+    .div-clients.div-clients-active > div > :last-child{
+        font-size: 40px;
+        height: 80px;
+        width: 100%;
+    }
+    .div-clients.div-clients-active > div > :last-child::before{
+        font-size: 28px;
+    }
+
+    .section-wallpaper{
+        height: 550px;
+        background-size: 101%;
+        margin-top: 1%;
+     }
+     .section-wallpaper > :first-child{
+        font-size: 30px;
+        margin-top: 10%;
+    }
+    .section-wallpaper > div{
+        bottom: 20px;
+        justify-content: center;
+        gap: 10px;
+        width: 100%;
+    }
+    .section-wallpaper > div > :first-child{
+        font-size: 35px;
+    }
+}
+@media screen and (min-width: 806px) and (max-width: 850px){
+    .section-apresentation{
+        height: 860px;
+    }
+    .inline > h1{
+        font-size: 75px;
+        margin-top: 20%;
+        margin-left: 5%;
+    }
+    .inline > h1 > span{
+        font-size: 35px;
+        font-weight: lighter;
+        border: 1px solid #ff0000;
+        padding: 5px 2px;
+        border-radius: 5px;
+        color: #000;
+        position: absolute;
+        top: 10%;
+    }
+    .inline >:nth-child(2){
+        word-wrap: break-word;
+        width: 90%;
+        margin-top: 5%;
+        margin-left: 5%;
+        font-weight: lighter;
+        font-size: 30px;
+    }
+    .btns-section{
+        margin-top: 10%;
+        margin-left: 5%;
+        width: 100%;
+    }
+    .btns-section > :first-child > :first-child{
+        background-color: #ff0000;
+        padding: 20px 40px;
+        border: 1px solid #ff0000;
+        border-radius: 3px;
+        cursor: pointer;
+        font-size: 18px;
+        position: relative;
+        transition: all .2s;
+        color: #fff;
+    }
+    .div-clients{
+       margin-top: 10%;
+       margin-left: 0%;
+        width: 100%;
+        background-color: #ff0000;
+        padding: 5%;
+        color: #fff;
+        border-radius: 20px 20px 0 0;
+        position: relative;
+    }
+    .div-clients.div-clients-active{
+        position: absolute;
+        top: 0;
+        z-index: 200;
+        animation: clients-on 1s alternate;
+        height: 100%;
+    }
+    @keyframes clients-on {
+        0%{
+            height: 0;
+        }
+        100%{
+            height: 1;
+        }
+    }
+    .div-clients > #btn-up{
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 20px 25px;
+        border-radius: 50%;
+        border: none;
+        background-color: #000;
+        color: #fff;
+    }
+    #btn-down.down-btn-on{
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 20px 25px;
+        border-radius: 50%;
+        border: none;
+        background-color: #000;
+        color: #fff;
+    }
+    .div-clients.div-clients-active  > :first-child{
+        margin-top: 20%;
+        font-size: 50px;
+        height: 90px;
+    }
+    .div-clients.div-clients-active  > :first-child::before{
+        font-size: 28px;    
+    }
+    .div-clients > div {
+        display: none;
+      
+    }
+    .div-clients.div-clients-active > div{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        justify-content: baseline;
+        align-items: baseline;
+        gap: 30px;
+    }
+    .div-clients.div-clients-active > div > :first-child{
+        font-size: 50px;
+        position: relative;
+        height: 90px; 
+        width: 100%;
+    }
+    .div-clients.div-clients-active > div > :first-child::before{
+        font-size: 28px;
+    }
+    .div-clients.div-clients-active > div > :last-child{
+        font-size: 40px;
+        height: 80px;
+        width: 100%;
+    }
+    .div-clients.div-clients-active > div > :last-child::before{
+        font-size: 28px;
+    }
+
+    .section-wallpaper{
+        height: 600px;
+        background-size: 101%;
+        margin-top: 1%;
+     }
+     .section-wallpaper > :first-child{
+        font-size: 30px;
+        margin-top: 10%;
+    }
+    .section-wallpaper > div{
+        bottom: 20px;
+        justify-content: center;
+        gap: 10px;
+        width: 100%;
+    }
+    .section-wallpaper > div > :first-child{
+        font-size: 35px;
+    }
+}
+@media screen and (min-width: 851px) and (max-width: 1115px){
+    .section-apresentation{
+        height: 950px;
+    } 
+    .section-wallpaper{
+        height: 800px;
+        background-size: 101%;
+        margin-top: 0%;
+    }
+    .inline > h1{
+        font-size: 75px;
+        margin-top: 20%;
+        margin-left: 10%;
+    }
+    .inline > h1 > span{
+        font-size: 35px;
+        font-weight: lighter;
+        border: 1px solid #ff0000;
+        padding: 5px 2px;
+        border-radius: 5px;
+        color: #000;
+        position: absolute;
+        top: 10%;
+    }
+    .inline >:nth-child(2){
+        word-wrap: break-word;
+        width: 70%;
+        margin-top: 5%;
+        margin-left: 10%;
+        font-weight: lighter;
+        font-size: 30px;
+    }
+    .btns-section{
+     
+        margin-left: 10%;
+    }
+    .div-clients{
+        margin-left: 10%;
+        width: 100%;
+     }
+    .div-clients > :first-child{
+        font-size: 40px;
+        height: 80px;
+    }
+    .div-clients > :first-child::before{
+        font-size: 25px;    
+    }
+    .div-clients > div > :first-child{
+        font-size: 40px;
+        width: 200px;
+        height: 110px;
+    }
+    .div-clients > div > :first-child::before{
+        font-size: 25px;    
+    }
+    .div-clients > div > :last-child{
+        font-size: 30px;
+        height: 80px;
+        width: 40%;
+    }
+    .div-clients > div > :last-child::before{
+        font-size: 20px;    
+    }
+    .section-wallpaper > :first-child{
+        font-size: 30px;
+        margin-top: 10%;
+    }
+    .section-wallpaper > div{
+        width: 350px;
+    }
+    .section-wallpaper > div > :first-child{
+        font-size: 35px;
+    }
+}
